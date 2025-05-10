@@ -25,7 +25,6 @@ app.use(expresslayouts);
  *************************/
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views")); // Ensure views directory is set
-console.log("Views directory:", path.join(__dirname, "views")); // Debug log
 app.set("layout", "./layouts/layout"); // Layout file
 
 /* ***********************
