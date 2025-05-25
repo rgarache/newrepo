@@ -493,7 +493,7 @@ footer p {
   }
 }
 
-/* Si solo hay un vehículo */
+/*Only 1 vehicle */
 #inv-display li:only-child img {
   display: block;
   height: 110px !important;
@@ -503,7 +503,7 @@ footer p {
   margin-right: auto;
 }
 
-/* Si solo hay dos vehículos */
+/* 2 vehicles */
 #inv-display li:first-child:nth-last-child(2) img,
 #inv-display li:last-child:nth-child(2) img {
   display: block;
