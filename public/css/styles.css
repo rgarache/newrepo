@@ -375,3 +375,141 @@ footer p {
     /* Un poco más de espacio para que no se vean tan pequeños */
   }
 }
+
+
+/* Galería de vehículos */
+#inv-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2em;
+  padding: 2em 0;
+  list-style: none;
+  margin: 0;
+  width: 100%;
+}
+
+#inv-display li {
+  background: #fff;
+  border: 2px solid #4c96d7;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(76, 150, 215, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  padding: 0;
+}
+
+#inv-display li:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(76, 150, 215, 0.18);
+  border-color: #3a3a3a;
+}
+
+#inv-display img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  background: #e9e9e9;
+  border-bottom: 1px solid #4c96d7;
+}
+
+#inv-display .namePrice {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#inv-display h2 {
+  color: #4c96d7;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: .5em 0 .3em 0;
+  text-align: center;
+}
+
+#inv-display h2 a {
+  color: #4c96d7;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#inv-display h2 a:hover {
+  color: #3a3a3a;
+}
+
+#inv-display span {
+  color: #fff;
+  background: #4c96d7;
+  border-radius: 5px;
+  padding: .3em .8em;
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: .5em;
+  display: inline-block;
+}
+
+#inv-display hr {
+  width: 60%;
+  border: 1px solid #4c96d7;
+  margin: 0.5em auto;
+}
+
+.notice {
+  color: #3a3a3a;
+  background: #e9e9e9;
+  border-radius: 8px;
+  padding: 1em;
+  text-align: center;
+  margin: 2em 0;
+  font-size: 1.1em;
+}
+
+/* Responsive tweaks */
+@media only screen and (max-width: 900px) {
+  #inv-display {
+    gap: 1.2em;
+  }
+
+  #inv-display img {
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #inv-display {
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 1em 0;
+  }
+
+  #inv-display img {
+    height: 90px;
+  }
+
+  #inv-display .namePrice {
+    padding: .7em;
+  }
+}
+
+/* Si solo hay un vehículo */
+#inv-display li:only-child img {
+  display: block;
+  height: 110px !important;
+  width: auto;
+  max-width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Si solo hay dos vehículos */
+#inv-display li:first-child:nth-last-child(2) img,
+#inv-display li:last-child:nth-child(2) img {
+  display: block;
+  height: 110px !important;
+  width: auto;
+  max-width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+}
