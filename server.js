@@ -13,6 +13,8 @@ const path = require("path");
 const env = require("dotenv").config();
 const app = express();
 const static = require("./routes/static");
+const baseController = require("./controllers/baseController");
+const inventoryRoute = require("./routes/inventoryRoute");
 
 /* ***********************
  * Middleware
@@ -31,11 +33,10 @@ app.set("layout", "./layouts/layout"); // Layout file
  * Routes
  *************************/
 app.use(static);
+app.use("/inv", inventoryRoute); // Inventory routes
 
 // Index route
-app.get("/", function (req, res) {
-  res.render("index", { title: "Home" });
-});
+app.get("/", baseController.buildHome);
 
 /* ***********************
  * Error Handling
